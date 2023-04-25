@@ -14,8 +14,8 @@ function sha1 { Get-FileHash -Algorithm SHA1 $args }
 function sha256 { Get-FileHash -Algorithm SHA256 $args }
 
 # QUICK LAUNCH
-# - NOTEPAD
-# - VSCODE
+# NOTEPAD
+# VSCODE
 function n { notepad $args }
 function c { code $args }
 
@@ -57,6 +57,7 @@ function cd... { Set-Location ..\.. }
 function cd.... { Set-Location ..\..\.. }
 
 # LIST DIRECTORY (EXCEPT FOLDERS)
+# USE ls (WITH FOLDERS)
 function ll { Get-ChildItem -Path $pwd -File }
 
 # GET PUBLIC IP ADDRESS
@@ -71,7 +72,6 @@ function uptime {
         LABEL      = 'LastBootUpTime';
         EXPRESSION = { $_.ConverttoDateTime($_.lastbootuptime) }
     }
-
 }
 
 # FIND FILE(S) CONTAINING KEYWORD
@@ -98,7 +98,7 @@ function pgrep($name) {
 }
 
 # POWERSHELL THEME
-oh-my-posh init pwsh --config "V:\Powershell\Themes\jblab_2021.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "V:\Powershell\jblab_2021.omp.json" | Invoke-Expression
 
 # CHOCOLATEY PROFILE FOR "CHOCO" TAB COMPLETION
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
